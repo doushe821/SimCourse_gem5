@@ -59,7 +59,7 @@ SimObject('BranchPredictor.py',
     'MultiperspectivePerceptronTAGE', 'MPP_StatisticalCorrector_64KB',
     'MultiperspectivePerceptronTAGE64KB', 'MPP_TAGE_8KB',
     'MPP_LoopPredictor_8KB', 'MPP_StatisticalCorrector_8KB',
-    'MultiperspectivePerceptronTAGE8KB', 'GshareBP'],
+    'MultiperspectivePerceptronTAGE8KB', 'GshareBP', 'PerceptronBP'],
     enums=['BranchType', 'TargetProvider'])
 
 Source('bpred_unit.cc')
@@ -95,3 +95,4 @@ DebugFlag('Branch')
 DebugFlag('Tage')
 DebugFlag('LTage')
 DebugFlag('TageSCL')
+Source('perceptron.cc')

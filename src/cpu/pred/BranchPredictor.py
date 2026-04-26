@@ -1166,3 +1166,27 @@ class GshareBP(BranchPredictor):
 
     global_predictor_size = Param.Unsigned(512, "Size of global predictor")
     global_counter_bits = Param.Unsigned(2, "Bits per counter")
+
+
+class PerceptronBP(ConditionalPredictor):
+    type = "PerceptronBP"
+    cxx_class = "gem5::branch_prediction::PerceptronBP"
+    cxx_header = "cpu/pred/perceptron.hh"
+
+    numPerceptrons = Param.Unsigned(
+        1024, "Number of perceptrons in the predictor table"
+    )
+
+    historyLength = Param.Unsigned(
+        32, "Number of global history bits used by each perceptron"
+    )
+
+    weightBits = Param.Unsigned(
+        8, "Number of bits used to represent each perceptron weight"
+    )
+
+    threshold = Param.Int(
+        64, "Training threshold; train when abs(output) is below this value"
+    )
+
+    numThreads = Param.Unsigned(1, "Number of hardware threads")
